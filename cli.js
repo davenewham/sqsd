@@ -97,10 +97,10 @@ const sqsd = require('./lib/index').SQSProcessor;
 console.log('SQSD v' + pkg.version);
 const daemon = new sqsd(mergedParams);
 
-process.on('message', function (message) {
-    if (message.action == 'shutdown') {
-        daemon.shutdown = true;
-    }
+
+process.on('SIGTERM', () => {
+    console.info('SIGTERM signal received, graceful shutdown sqsd');
+    daemon.shutdown = true;
 });
 
 daemon.start()

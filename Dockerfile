@@ -13,8 +13,8 @@ RUN npm ci --omit=dev
 FROM node-base
 WORKDIR /sqsd
 COPY --from=node-packages /sqsd/node_modules ./node_modules
-COPY package.json cli.js run-cli.js ./
+COPY package.json cli.js ./
 COPY lib ./lib
 
 # Run sqsd
-CMD ["node", "run-cli.js"]
+CMD ["node", "cli.js"]
