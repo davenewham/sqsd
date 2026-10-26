@@ -15,7 +15,8 @@
     }
   ],
   "scripts": {
-    "start": "node cli.js"
+    "start": "node cli.js",
+    "test": "node --test"
   },
   "repository": {
     "type": "git",
@@ -40,5 +41,8 @@
     "debug": "^4.1.1",
     "dotenv": "^8.2.0",
     "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.3"
   }
 }
