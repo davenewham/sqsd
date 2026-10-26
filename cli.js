@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 'use strict';
-const path = require('path');
+const path = require('node:path');
 const program = require('commander');
 const _ = require('lodash');
 
-function increaseVerbosity(v, total) {
+function increaseVerbosity(_v, total) {
     return total + 1;
 }
 var pkg = require('./package.json');
@@ -143,11 +143,11 @@ if (!mergedParams.webHook) {
     process.exit(1);
 }
 
-const debug = require('debug')('sqsd');
-const error = require('debug')('sqsd:error');
+const _debug = require('debug')('sqsd');
+const _error = require('debug')('sqsd:error');
 const sqsd = require('./lib/index').SQSProcessor;
 
-console.log('SQSD v' + pkg.version);
+console.log(`SQSD v${pkg.version}`);
 const daemon = new sqsd(mergedParams);
 
 process.on('SIGTERM', () => {
