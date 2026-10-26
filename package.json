@@ -22,7 +22,7 @@
     "url": "https://github.com/proofme/sqsd.git"
   },
   "bin": {
-    "sqsd": "./run-cli.js"
+    "sqsd": "./cli.js"
   },
   "license": "MIT",
   "keywords": [
@@ -36,7 +36,6 @@
   ],
   "dependencies": {
     "@aws-sdk/client-sqs": "^3.592.0",
-    "axios": "^0.21.2",
     "commander": "^5.1.0",
     "debug": "^4.1.1",
     "dotenv": "^8.2.0",
